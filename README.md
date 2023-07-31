@@ -1,8 +1,6 @@
 # Bird 2.0 routing daemon
 
-This container image provides bird 2.0.7 (bird.network.cz) on Alpine edge, as
-it is not available on any stable Alpine release yet.
-
+This container image provides latest [bird](https://bird.network.cz) on Alpine stable release.
 
 FIB manipulation currently requires some capability:
 	NET_ADMIN, SYS_ADMIN, SETPCAP, NET_RAW
@@ -10,4 +8,4 @@ FIB manipulation currently requires some capability:
 ### Configuration
 
 Configuration is done by supplying a configuration file to
-`/etc/bird/bird.conf`.  If no config file is supplied, bird will not come up.
+`/app/config/bird.conf`.  If no config file is supplied, bird will not come up.
