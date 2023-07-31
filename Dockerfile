@@ -1,9 +1,9 @@
-FROM alpine:20191114
+FROM alpine:latest
 
-RUN apk add --no-cache -X http://dl-cdn.alpinelinux.org/alpine/edge/testing bird
-RUN mkdir -p /run/bird
-RUN mkdir -p /etc/bird
+RUN apk add --no-cache bird
+RUN mkdir -p /app/config
+VOLUME /app/config
 
 EXPOSE 179
 
-CMD [ "/usr/sbin/bird", "-d", "-s", "/var/run/bird/bird.ctl", "-c", "/etc/bird/bird.conf" ]
+CMD [ "/usr/sbin/bird", "-d", "-s", "/app/config/bird.ctl", "-c", "/app/config/bird.conf" ]
