@@ -1,0 +1,15 @@
+version: '3.3'
+services:
+    bird:
+        ports:
+            - '179:179'
+        volumes:
+            - './birdcfg:/app/config:rw'
+        #image: bird:latest unable to set up image yet
+        restart: always
+        network_mode: host
+        cap_add:
+            - NET_ADMIN 
+            - SYS_ADMIN
+            - SETPCAP
+            - NET_RAW
